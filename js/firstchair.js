@@ -15,7 +15,7 @@ function arrayCleaner (arr, value) {
  function spinalCaseConverter(str) {
      let camelCaseHandled = str.replace(/([a-z]) ([A-Z])/g, "$1 $2");
      let spacesAndDashedHAndled = camelCaseHandled.replace(/\s|_/g, "-")
-    return spacesAndDashedHAndled.toLowerCase();
+    return spacesAndDashedHAndled;
   }
 
   let result = spinalCaseConverter('CONVERT-This-text-To-SpInalCase');
