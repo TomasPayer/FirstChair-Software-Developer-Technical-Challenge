@@ -1,25 +1,37 @@
-// First Challenge//
-function arrayCleaner (arr, value) {
+// First Challenge //
+function arrayCleaner(arr, value) {
 
     var args = Array.prototype.slice.call(arguments);
     args.shift();
-    return arr.filter(function(element) {
-      return args.indexOf(element) === -1;
+    return arr.filter(function (element) {
+        return args.indexOf(element) === -1;
     });
-  }
-   
- console.log(arrayCleaner([1, 2, 3, 1, 2, 3], 2, 3));
+}
 
- // Second Challenge//
+console.log(arrayCleaner([1, 2, 3, 1, 2, 3], 2, 3));
 
- function spinalCaseConverter(str) {
-     let camelCaseHandled = str.replace(/([a-z]) ([A-Z])/g, "$1 $2");
-     let spacesAndDashedHAndled = camelCaseHandled.replace(/\s|_/g, "-")
+// Second Challenge //
+
+function spinalCaseConverter(str) {
+    let camelCaseHandled = str.replace(/([a-z]) ([A-Z])/g, "$1 $2");
+    let spacesAndDashedHAndled = camelCaseHandled.replace(/\s|_/g, "-")
     return spacesAndDashedHAndled;
-  }
+}
 
-  let result = spinalCaseConverter('CONVERT-This-text-To-SpInalCase');
-  
-  console.log(result);
-  
- 
+let result = spinalCaseConverter('CONVERT-This-text-To-SpInalCase');
+
+console.log(result);
+
+// Third Challenge //
+const testCapital = new Capital('Viedma, Rio Negro');
+
+function Capital(city, province) {
+    this.city = city;
+    this.province = province;
+    
+
+}
+console.log(Capital);
+
+
+
