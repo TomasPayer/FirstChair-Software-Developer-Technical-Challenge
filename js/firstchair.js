@@ -26,7 +26,7 @@ console.log(result);
 
 const testCapital = new Capital('Viedma', 'Rio Negro');
 
-function Capital (city, province) {
+function Capital(city, province) {
     this.city = city;
     this.province = province;
     this.getCity = function () {
@@ -41,7 +41,7 @@ function Capital (city, province) {
 }
 
 Capital.prototype.setCity = function () {
-    console.log('Santa Rosa') 
+    console.log('Santa Rosa')
 }
 Capital.prototype.setProvince = function () {
     console.log('La Pampa');
