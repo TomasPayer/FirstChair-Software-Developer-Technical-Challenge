@@ -23,15 +23,39 @@ let result = spinalCaseConverter('CONVERT-This-text-To-SpInalCase');
 console.log(result);
 
 // Third Challenge //
-const testCapital = new Capital('Viedma, Rio Negro');
 
-function Capital(city, province) {
+function Capital (city, province) {
     this.city = city;
     this.province = province;
-    
-
+    this.getCity = function () {
+        return `${this.city}`;
+    }
+    this.getProvince = function () {
+        return `${this.province}`;
+    }
+    this.getCityAndProvince = function () {
+        return `${this.city} ${this.province}`;
+    }
+    this.getNewCity = function () {
+        return `${this.city}`;
+    }
+    this.getNewProvince = function () {
+        return `${this.city}`;
+    }
 }
-console.log(Capital);
+const testCapital = new Capital('Viedma', 'Rio Negro');
+const testNewCapital = new Capital('Santa Rosa');
+const testNewProvince = new Capital('La Pampa')
+
+
+
+console.log(testCapital.getCity());
+console.log(testCapital.getProvince());
+console.log(testCapital.getCityAndProvince());
+console.log(testNewCapital.getNewCity());
+console.log(testNewProvince.getNewProvince());
+
+
 
 
 
