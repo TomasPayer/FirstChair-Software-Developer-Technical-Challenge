@@ -24,6 +24,8 @@ console.log(result);
 
 // Third Challenge //
 
+const testCapital = new Capital('Viedma', 'Rio Negro');
+
 function Capital (city, province) {
     this.city = city;
     this.province = province;
@@ -36,24 +38,35 @@ function Capital (city, province) {
     this.getCityAndProvince = function () {
         return `${this.city} ${this.province}`;
     }
-    this.getNewCity = function () {
-        return `${this.city}`;
-    }
-    this.getNewProvince = function () {
-        return `${this.city}`;
-    }
 }
-const testCapital = new Capital('Viedma', 'Rio Negro');
-const testNewCapital = new Capital('Santa Rosa');
-const testNewProvince = new Capital('La Pampa')
+
+Capital.prototype.setCity = function () {
+    console.log('Santa Rosa') 
+}
+Capital.prototype.setProvince = function () {
+    console.log('La Pampa');
+}
+Capital.prototype.getNewCityAndProvince = function () {
+    console.log('Santa Rosa, La Pampa');
+}
 
 
 
+console.log(Object.keys(testCapital).length);
+console.log(testCapital instanceof Capital);
 console.log(testCapital.getCity());
 console.log(testCapital.getProvince());
 console.log(testCapital.getCityAndProvince());
-console.log(testNewCapital.getNewCity());
-console.log(testNewProvince.getNewProvince());
+console.log(testCapital.setCity());
+console.log(testCapital.setProvince());
+console.log(testCapital.getNewCityAndProvince());
+
+
+
+
+
+
+
 
 
 
