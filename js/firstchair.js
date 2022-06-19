@@ -13,7 +13,7 @@ console.log(arrayCleaner([1, 2, 3, 1, 2, 3], 2, 3));
 // Second Challenge //
 
 function spinalCaseConverter(str) {
-    let camelCaseHandled = str.replace(/([a-z]) ([A-Z])/g, "$1 $2");
+    let camelCaseHandled = str.toLowerCase().replace(/\s|_|-/g, " ").split(' ').join('-');;
     let spacesAndDashedHAndled = camelCaseHandled.replace(/\s|_/g, "-")
     return spacesAndDashedHAndled;
 }
@@ -37,13 +37,13 @@ class Capital {
         this.getCityAndProvince = function () {
             return `${_city}, ${_province}`;
         }
-        this.setCity = function(newCity) {
+        this.setCity = function (newCity) {
             _city = newCity
         }
-        this.setProvince = function(newProvince) {
+        this.setProvince = function (newProvince) {
             _province = newProvince
         }
-        this.setCityAndProvince = function(newPlace) {
+        this.setCityAndProvince = function (newPlace) {
             _city = newPlace.split(',')[0];
             _province = newPlace.split(',')[1];
         }
@@ -63,20 +63,4 @@ console.log(testCapital.setCity("Santa Rosa"));
 console.log(testCapital.getCity());
 console.log(testCapital.getCityAndProvince());
 console.log(testCapital.setProvince("La Pampa"));
-console.log(testCapital.getCityAndProvince()); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(testCapital.getCityAndProvince());
