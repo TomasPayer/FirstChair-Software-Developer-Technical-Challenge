@@ -24,32 +24,34 @@ console.log(result);
 
 // Third Challenge //
 
-const testCapital = new Capital('Viedma', 'Rio Negro');
-
-function Capital(city, province) {
-    this.city = city;
-    this.province = province;
-    this.getCity = function () {
-        return `${this.city}`;
+class Capital {
+    constructor(place) {
+        var _city = place.split(',')[0];
+        var _province = place.split(',')[1];
+        this.getCity = function () {
+            return _city;
+        }
+        this.getProvince = function () {
+            return _province;
+        }
+        this.getCityAndProvince = function () {
+            return `${_city}, ${_province}`;
+        }
+        this.setCity = function(newCity) {
+            _city = newCity
+        }
+        this.setProvince = function(newProvince) {
+            _province = newProvince
+        }
+        this.setCityAndProvince = function(newPlace) {
+            _city = newPlace.split(',')[0];
+            _province = newPlace.split(',')[1];
+        }
     }
-    this.getProvince = function () {
-        return `${this.province}`;
-    }
-    this.getCityAndProvince = function () {
-        return `${this.city} ${this.province}`;
-    }
 }
 
-Capital.prototype.setCity = function () {
-    console.log('Santa Rosa')
-}
-Capital.prototype.setProvince = function () {
-    console.log('La Pampa');
-}
-Capital.prototype.getNewCityAndProvince = function () {
-    console.log('Santa Rosa, La Pampa');
-}
 
+const testCapital = new Capital('Viedma, Rio Negro');
 
 
 console.log(Object.keys(testCapital).length);
@@ -57,9 +59,15 @@ console.log(testCapital instanceof Capital);
 console.log(testCapital.getCity());
 console.log(testCapital.getProvince());
 console.log(testCapital.getCityAndProvince());
-console.log(testCapital.setCity());
-console.log(testCapital.setProvince());
-console.log(testCapital.getNewCityAndProvince());
+console.log(testCapital.setCity("Santa Rosa"));
+console.log(testCapital.getCity());
+console.log(testCapital.getCityAndProvince());
+console.log(testCapital.setProvince("La Pampa"));
+console.log(testCapital.getCityAndProvince()); 
+
+
+
+
 
 
 
